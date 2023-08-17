@@ -1,0 +1,399 @@
+<link rel="canonical" href="https://wizardofodds.com/play/craps/v2/" />
+<link rel="stylesheet" href="https://wizardofodds.com/assets/css/global.min.css?2023071901" media="screen" type="text/css">
+<!--[if lt IE 10]>
+					    <link rel="stylesheet" href="https://wizardofodds.com/assets/css/lt_ie10.css" media="screen" type="text/css">
+					  <![endif]-->
+<link rel="stylesheet" href="https://wizardofodds.com/assets/css/prettyPhoto.css" type="text/css" />
+<link rel="stylesheet" href="https://wizardofodds.com/common/media.css?20161101_01" type="text/css" />
+<link rel="stylesheet" href="https://wizardofodds.com/assets/css/print.min.css?20161101_01" media="print" type="text/css">
+<script type="text/javascript">
+					    WebFontConfig = {
+					      google: { families: [ 'Open+Sans:300,400,400italic,600,700:latin' ] }
+					    };
+					    (function() {
+					        var h = document.documentElement;
+					        h.className += ' wf-loading';
+					        var loaderTimeout = setTimeout( function(){
+					        h.className = h.className.replace(/(\s|^)wf-loading(\s|$)/g, ' ') + ' wf-inactive';
+					      }, 3000 );
+
+					    var wf = document.createElement('script');
+					    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+					      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+					    wf.type = 'text/javascript';
+					    wf.async = 'true';
+					    var s = document.getElementsByTagName('script')[0];
+					    s.parentNode.insertBefore(wf, s);
+					    })();
+					  </script
+
+
+
+<link rel="stylesheet" type="text/css" href="https://wizardofodds.com/wizfiles/play_ff/3/craps2.css">
+
+<div class="content-app game-holder no-padding">
+
+<div>
+<link rel="stylesheet" type="text/css" href="https://wizardofodds.com/wizfiles/play_ff/3/craps2.css">
+<script type="text/javascript" src="https://wizardofodds.com/wizfiles/play_ff/3/animation.js"></script>
+<script type="text/javascript" src="https://wizardofodds.com/wizfiles/play_ff/3/font.js"></script>
+<script type="text/javascript" src="https://wizardofodds.com/wizfiles/play_ff/3/hotspot.js"></script>
+<script type="text/javascript" src="https://wizardofodds.com/wizfiles/play_ff/3/msgbox.js"></script>
+<script type="text/javascript" src="https://wizardofodds.com/wizfiles/play_ff/3/rng.js"></script>
+<script type="text/javascript" src="https://wizardofodds.com/wizfiles/play_ff/3/wager.js"></script>
+<script type="text/javascript" src="https://wizardofodds.com/wizfiles/play_ff/3/game.js"></script>
+<div id="loading" style="display: none;"><script type="text/javascript">document.write("Loading, please wait...");</script>Loading, please wait...Loading, please wait...Loading, please wait...<noscript>You must enable JavaScript in order to play this game.</noscript></div>
+<div id="cache">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/button.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/chip.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/chip-selector.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/dice.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/font-black.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/font-blue.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/font-cyan.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/font-green.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/font-magenta.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/font-red.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/font-white.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/font-yellow.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/game.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/msgbox.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/puck.png">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/trans.gif">
+<img src="https://wizardofodds.com/wizfiles/play_ff/3/wager.png">
+</div>
+<div id="gamemain" style="height: 622px;">
+<p>
+<input type="checkbox" checked="true" id="BetsOn" onclick="Game.Update();"><label for="BetsOn" title="Enable to leave buy bets, come odds, and hardway bets working on come-out rolls"> Leave bets working</label> &nbsp;
+<input type="checkbox" id="BetsUp"><label for="BetsUp" title="Enable to leave winning bets up"> Leave winning bets up</label>
+</p>
+<div id="game" class="scaled" style="display: block; transform: scale(0.96);">
+<div id="message"></div>
+<div class="enabled wager" id="PassLine" style="display: none;"></div>
+<div class="wager" id="PassLineOdds" style="display: none;"></div>
+<div class="enabled wager" id="DontPass" style="display: none;"></div>
+<div class="disabled wager" id="DontPassOdds" style="display: none;"></div>
+<div class="enabled wager" id="Field" style="display: none;"></div>
+<div class="disabled wager" id="Come" style="display: none;"></div>
+<div class="wager" id="DontCome" style="display: none;"></div>
+<div class="wager" id="Lay4" style="display: none;"></div>
+<div class="wager" id="Lay5" style="display: none;"></div>
+<div class="wager" id="Lay6" style="display: none;"></div>
+<div class="enabled wager" id="Lay8" style="display: none;"></div>
+<div class="enabled wager" id="Lay9" style="display: none;"></div>
+<div class="enabled wager" id="Lay10" style="display: none;"></div>
+<div class="wager" id="DontCome4" style="display: none;"></div>
+<div class="wager" id="DontCome5" style="display: none;"></div>
+<div class="wager" id="DontCome6" style="display: none;"></div>
+<div class="disabled wager" id="DontCome8" style="display: none;"></div>
+<div class="disabled wager" id="DontCome9" style="display: none;"></div>
+<div class="disabled wager" id="DontCome10" style="display: none;"></div>
+<div class="wager" id="DontCome4Odds" style="display: none;"></div>
+<div class="wager" id="DontCome5Odds" style="display: none;"></div>
+<div class="wager" id="DontCome6Odds" style="display: none;"></div>
+<div class="disabled wager" id="DontCome8Odds" style="display: none;"></div>
+<div class="wager" id="DontCome9Odds" style="display: none;"></div>
+<div class="disabled wager" id="DontCome10Odds" style="display: none;"></div>
+<div class="wager" id="Come4" style="display: none;"></div>
+<div class="wager" id="Come5" style="display: none;"></div>
+<div class="wager" id="Come6" style="display: none;"></div>
+<div class="disabled wager" id="Come8" style="display: none;"></div>
+<div class="wager" id="Come9" style="display: none;"></div>
+<div class="disabled wager" id="Come10" style="display: none;"></div>
+<div class="wager" id="Come4Odds" style="display: none;"></div>
+<div class="wager" id="Come5Odds" style="display: none;"></div>
+<div class="disabled wager" id="Come6Odds" style="display: none;"></div>
+<div class="wager" id="Come8Odds" style="display: none;"></div>
+<div class="disabled wager" id="Come9Odds" style="display: none;"></div>
+<div class="wager" id="Come10Odds" style="display: none;"></div>
+<div class="wager" id="Buy4" style="display: none;"></div>
+<div class="wager" id="Buy5" style="display: none;"></div>
+<div class="enabled wager" id="Buy6" style="display: none;"></div>
+<div class="wager" id="Buy8" style="display: none;"></div>
+<div class="enabled wager" id="Buy9" style="display: none;"></div>
+<div class="enabled wager" id="Buy10" style="display: none;"></div>
+<div class="enabled wager" id="AnySeven" style="display: none;"></div>
+<div class="enabled wager" id="Hard4" style="display: none;"></div>
+<div class="enabled wager" id="Hard6" style="display: none;"></div>
+<div class="enabled wager" id="Hard8" style="display: none;"></div>
+<div class="disabled wager" id="Hard10" style="display: none;"></div>
+<div class="enabled wager" id="Three" style="display: none;"></div>
+<div class="enabled wager" id="Eleven" style="display: none;"></div>
+<div class="enabled wager" id="Two" style="display: none;"></div>
+<div class="enabled wager" id="Twelve" style="display: none;"></div>
+<div class="enabled wager" id="AnyCraps" style="display: none;"></div>
+<div id="PassLine_stack"></div>
+<div id="PassLineOdds_stack"></div>
+<div id="DontPass_stack"></div>
+<div id="DontPassOdds_stack"></div>
+<div id="Field_stack"></div>
+<div id="Come_stack"></div>
+<div id="DontCome_stack"></div>
+<div id="Lay4_stack"></div>
+<div id="Lay5_stack"></div>
+<div id="Lay6_stack"></div>
+<div id="Lay8_stack"></div>
+<div id="Lay9_stack"></div>
+<div id="Lay10_stack"></div>
+<div id="DontCome4_stack"></div>
+<div id="DontCome5_stack"></div>
+<div id="DontCome6_stack"></div>
+<div id="DontCome8_stack"></div>
+<div id="DontCome9_stack"></div>
+<div id="DontCome10_stack"></div>
+<div id="DontCome4Odds_stack"></div>
+<div id="DontCome5Odds_stack"></div>
+<div id="DontCome6Odds_stack"></div>
+<div id="DontCome8Odds_stack"></div>
+<div id="DontCome9Odds_stack"></div>
+<div id="DontCome10Odds_stack"></div>
+<div id="Come4_stack"></div>
+<div id="Come5_stack"></div>
+<div id="Come6_stack"></div>
+<div id="Come8_stack"></div>
+<div id="Come9_stack"></div>
+<div id="Come10_stack"></div>
+<div id="Come4Odds_stack"></div>
+<div id="Come5Odds_stack"></div>
+<div id="Come6Odds_stack"></div>
+<div id="Come8Odds_stack"></div>
+<div id="Come9Odds_stack"></div>
+<div id="Come10Odds_stack"></div>
+<div id="Buy4_stack"></div>
+<div id="Buy5_stack"></div>
+<div id="Buy6_stack"></div>
+<div id="Buy8_stack"></div>
+<div id="Buy9_stack"></div>
+<div id="Buy10_stack"></div>
+<div id="AnySeven_stack"></div>
+<div id="Hard4_stack"></div>
+<div id="Hard6_stack"></div>
+<div id="Hard8_stack"></div>
+<div id="Hard10_stack"></div>
+<div id="Three_stack"></div>
+<div id="Eleven_stack"></div>
+<div id="Two_stack"></div>
+<div id="Twelve_stack"></div>
+<div id="AnyCraps_stack"></div>
+<div id="PassLine_slider"></div>
+<div id="PassLineOdds_slider"></div>
+<div id="DontPass_slider"></div>
+<div id="DontPassOdds_slider"></div>
+<div id="Field_slider"></div>
+<div id="Come_slider"></div>
+<div id="DontCome_slider"></div>
+<div id="Lay4_slider"></div>
+<div id="Lay5_slider"></div>
+<div id="Lay6_slider"></div>
+<div id="Lay8_slider"></div>
+<div id="Lay9_slider"></div>
+<div id="Lay10_slider"></div>
+<div id="DontCome4_slider"></div>
+<div id="DontCome5_slider"></div>
+<div id="DontCome6_slider"></div>
+<div id="DontCome8_slider"></div>
+<div id="DontCome9_slider"></div>
+<div id="DontCome10_slider"></div>
+<div id="DontCome4Odds_slider"></div>
+<div id="DontCome5Odds_slider"></div>
+<div id="DontCome6Odds_slider"></div>
+<div id="DontCome8Odds_slider"></div>
+<div id="DontCome9Odds_slider"></div>
+<div id="DontCome10Odds_slider"></div>
+<div id="Come4_slider"></div>
+<div id="Come5_slider"></div>
+<div id="Come6_slider"></div>
+<div id="Come8_slider"></div>
+<div id="Come9_slider"></div>
+<div id="Come10_slider"></div>
+<div id="Come4Odds_slider"></div>
+<div id="Come5Odds_slider"></div>
+<div id="Come6Odds_slider"></div>
+<div id="Come8Odds_slider"></div>
+<div id="Come9Odds_slider"></div>
+<div id="Come10Odds_slider"></div>
+<div id="Buy4_slider"></div>
+<div id="Buy5_slider"></div>
+<div id="Buy6_slider"></div>
+<div id="Buy8_slider"></div>
+<div id="Buy9_slider"></div>
+<div id="Buy10_slider"></div>
+<div id="AnySeven_slider"></div>
+<div id="Hard4_slider"></div>
+<div id="Hard6_slider"></div>
+<div id="Hard8_slider"></div>
+<div id="Hard10_slider"></div>
+<div id="Three_slider"></div>
+<div id="Eleven_slider"></div>
+<div id="Two_slider"></div>
+<div id="Twelve_slider"></div>
+<div id="AnyCraps_slider"></div>
+<div id="puck"><img id="puckimg" src="https://wizardofodds.com/wizfiles/play_ff/3/puck.png"></div>
+<div class="puckoff" id="Come4Off" style="display: none;"></div>
+<div class="puckoff" id="Come5Off" style="display: none;"></div>
+<div class="puckoff" id="Come6Off" style="display: none;"></div>
+<div class="puckoff" id="Come8Off" style="display: none;"></div>
+<div class="puckoff" id="Come9Off" style="display: none;"></div>
+<div class="puckoff" id="Come10Off" style="display: none;"></div>
+<div class="puckoff" id="Buy4Off" style="display: none;"></div>
+<div class="puckoff" id="Buy5Off" style="display: none;"></div>
+<div class="puckoff" id="Buy6Off" style="display: none;"></div>
+<div class="puckoff" id="Buy8Off" style="display: none;"></div>
+<div class="puckoff" id="Buy9Off" style="display: none;"></div>
+<div class="puckoff" id="Buy10Off" style="display: none;"></div>
+<div class="puckoff" id="Hard4Off" style="display: none;"></div>
+<div class="puckoff" id="Hard6Off" style="display: none;"></div>
+<div class="puckoff" id="Hard8Off" style="display: none;"></div>
+<div class="puckoff" id="Hard10Off" style="display: none;"></div>
+<div id="die1"></div>
+<div id="die2"></div>
+<div id="balance"><img alt="" class="font_yellow font_symbol22" src="https://wizardofodds.com/wizfiles/play_ff/3/trans.gif"><img alt="" class="font_yellow font_digit1" src="https://wizardofodds.com/wizfiles/play_ff/3/trans.gif"><img alt="" class="font_yellow font_digit0" src="https://wizardofodds.com/wizfiles/play_ff/3/trans.gif"><img alt="" class="font_yellow font_symbol01" src="https://wizardofodds.com/wizfiles/play_ff/3/trans.gif"><img alt="" class="font_yellow font_digit0" src="https://wizardofodds.com/wizfiles/play_ff/3/trans.gif"><img alt="" class="font_yellow font_digit0" src="https://wizardofodds.com/wizfiles/play_ff/3/trans.gif"><img alt="" class="font_yellow font_digit0" src="https://wizardofodds.com/wizfiles/play_ff/3/trans.gif"></div>
+<div id="denom"></div>
+<div id="denom0"></div>
+<div id="denom1"></div>
+<div id="denom2"></div>
+<div id="denom3"></div>
+<div id="wager"><img alt="" class="font_yellow font_symbol22" src="https://wizardofodds.com/wizfiles/play_ff/3/trans.gif"><img alt="" class="font_yellow font_digit0" src="/wizfiles/play_ff/3/trans.gif"></div>
+<div id="win"></div>
+<div id="btn_roll" style="background-position: 0px 0px; display: block;"></div>
+<div id="btn_clear" style="background-position: -120px -150px; display: block;"></div>
+<div id="msgbox">
+<div id="msgbox_title"></div>
+<div id="msgbox_prompt"><table><tbody><tr><td id="msgbox_text"></td></tr></tbody></table></div>
+<div id="msgbox_button" style="background-position: -240px -150px;"></div>
+</div>
+<div id="capture"></div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="https://wizardofodds.com/assets/js/lib/jquery-2.1.4.min.js"><\/script>')</script>
+<!--[if lt IE 10]>
+					    <script src="/assets/js/lib/flexibility.js"></script>
+					  <![endif]-->
+<script src="https://wizardofodds.com/assets/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript">
+					   $('a[rel^="prettyPhoto"]').prettyPhoto({theme: "facebook",slideshow:5000, autoplay_slideshow:true});
+					</script>
+<script type="text/javascript">
+
+					function wiz_main_click(url)
+							{
+					var script = document.createElement("script");
+					script.setAttribute("type", "text/javascript");
+					script.setAttribute("src", url);
+					document.body.appendChild(script);
+						}
+
+					</script>
+<script type="text/javascript">
+					function wiz_subgame_nav_click(html_start, counter)
+					{
+						var html_id = html_start + "" + counter;
+						var html_id2 = html_start + "menu_" + counter;
+
+						if(!document.getElementById(html_id))
+						{
+							return false;
+						}
+
+
+						var c = 0;
+						var temp_id = "";
+						var temp_id2 = "";
+
+						while(c < 20)
+						{
+							temp_id = html_start + "" + c;
+							if(document.getElementById(temp_id) && c != counter)
+							{
+								document.getElementById(temp_id).style.display="none";
+							}
+							temp_id2 = html_start + "menu_" + c;
+							if(document.getElementById(temp_id2) && c != counter)
+							{
+								document.getElementById(temp_id2).className="";
+							}
+
+					c++;
+						}
+
+						document.getElementById(html_id).style.display="";
+							if(document.getElementById(html_id2) && c != counter)
+							{
+								document.getElementById(html_id2).className="active";
+							}
+
+					return false;
+					}
+
+
+					</script>
+<script src="https://wizardofodds.com/assets/js/compilation.output.min.js?2023081402"></script>
+<script src="https://wizardofodds.com/assets/js/jquery.basictable.min.js?20210909"></script>
+<script src="https://wizardofodds.com/assets/js/woo-basictable.js?20220824"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script type="text/javascript" src="https://wizardofodds.com/assets/js/subscribe-alert.js?20221005"></script>
+<script type="text/javascript" src="https://wizardofodds.com/assets/js/casino-filters.js?2023071901"></script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "🧙 Craps for Real Money or Free - Wizard of Odds",
+        "description": "Practice playing craps with this free craps game by the Wizard of Odds or select an online casino to play for real.",
+        "url": "https://wizardofodds.com/play/craps/v2/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Wizard of Odds"
+        }
+    }
+    </script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Organization",
+      "name": "Wizard of Odds",
+      "url": "https://wizardofodds.com/",
+      "logo": "https://wizardofodds.com/assets/images/header_logo.png"
+    }
+    </script>
+<script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "author": {
+            "@type": "Organization",
+            "name":  "Wizard of Odds",
+            "url": "https://wizardofodds.com/site/about/"
+            },
+          "headline": "🧙 Craps for Real Money or Free - Wizard of Odds",
+          "description": "Practice playing craps with this free craps game by the Wizard of Odds or select an online casino to play for real.",
+          "image": "https://wizardofodds.com/assets/images/header_logo.png",
+          "datePublished": "2023-08-17",
+          "dateModified": "2023-08-17",
+          "mainEntityOfPage": "https://wizardofodds.com/play/craps/v2/",
+          "url": "https://wizardofodds.com/play/craps/v2/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wizard of Odds",
+            "url": "https://wizardofodds.com/",
+            "logo": {
+            "@type": "ImageObject",
+                "url": "https://wizardofodds.com/assets/images/header_logo.png",
+                "width": "588",
+                "height": "148"
+            }
+          }
+        }
+        </script>
+<script src="https://wizardofodds.com/assets/js/playff-readmore.js"></script>
+<script src="https://wizardofodds.com/assets/js/woo-playff-readmore.js"></script><script src="https://wizardofodds.com/assets/js/game-scale.js"></script><script type="text/javascript">
+					          $( document ).ready(function() {
+					            $('#wiz_game_banners_area_alt').insertAfter($('.content-app>p:first'));
+					          });
+					        </script><script>
+            				gtag('event', 'pageview', { 'send_to': 'G-MHFKKZJZ24'  });
+           				</script>
